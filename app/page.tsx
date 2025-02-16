@@ -1,38 +1,36 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { nanoid } from 'nanoid';
-import ReactMarkdown from 'react-markdown';
-import { saveMarkdown } from '@/lib/redis';
-import { Copy, Check } from 'lucide-react';
+import { useState, useCallback } from "react";
+import ReactMarkdown from "react-markdown";
+import { saveMarkdown } from "@/lib/redis";
+import { Copy, Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import Logo from '@/components/Logo';
+} from "@/components/ui/dialog";
+import Logo from "@/components/Logo";
 
 export default function Home() {
-  const [markdown, setMarkdown] = useState('');
-  const [shareUrl, setShareUrl] = useState('');
+  const [markdown, setMarkdown] = useState("");
+  const [shareUrl, setShareUrl] = useState("");
   const [isSharing, setIsSharing] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [copyStatus, setCopyStatus] = useState('copy');
+  const [copyStatus, setCopyStatus] = useState("copy");
 
   const handleShare = useCallback(async () => {
     if (!markdown.trim()) return;
-    
+
     setIsSharing(true);
     try {
-      const id = nanoid();
-      await saveMarkdown(id, markdown);
+      const id = await saveMarkdown(markdown);
       const url = `${window.location.origin}/view/${id}`;
       setShareUrl(url);
       await navigator.clipboard.writeText(url);
       setShowModal(true);
     } catch (error) {
-      console.error('Failed to share:', error);
+      console.error("Failed to share:", error);
     } finally {
       setIsSharing(false);
     }
@@ -41,10 +39,10 @@ export default function Home() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl);
-      setCopyStatus('copied');
-      setTimeout(() => setCopyStatus('copy'), 2000);
+      setCopyStatus("copied");
+      setTimeout(() => setCopyStatus("copy"), 2000);
     } catch (error) {
-      console.error('Failed to copy:', error);
+      console.error("Failed to copy:", error);
     }
   };
 
@@ -61,7 +59,7 @@ export default function Home() {
                      disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all
                      shadow-sm hover:shadow-md"
           >
-            {isSharing ? 'Sharing...' : 'Share'}
+            {isSharing ? "Sharing..." : "Share"}
           </button>
         </header>
 
@@ -73,7 +71,7 @@ export default function Home() {
               className="w-full h-full p-4 bg-transparent font-mono text-sm resize-none focus:outline-none rounded-lg
                        text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
               placeholder="Write your markdown here..."
-              style={{ fontFamily: 'var(--font-geist-mono)' }}
+              style={{ fontFamily: "var(--font-geist-mono)" }}
             />
           </div>
           <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm shadow-sm p-4 overflow-auto">
@@ -105,7 +103,7 @@ export default function Home() {
                          transition-all duration-200
                          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
-                {copyStatus === 'copied' ? (
+                {copyStatus === "copied" ? (
                   <Check className="h-4 w-4 text-green-500" />
                 ) : (
                   <Copy className="h-4 w-4 text-gray-600 dark:text-gray-400" />
@@ -113,7 +111,8 @@ export default function Home() {
               </button>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
-              Your content is now available at this link. Share it with anyone to give them access.
+              Your content is now available at this link. Share it with anyone
+              to give them access.
             </p>
           </DialogContent>
         </Dialog>
