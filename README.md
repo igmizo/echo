@@ -1,8 +1,8 @@
 # ECHO
 
-Where markdown meets its reflection. A modern, real-time markdown editor and sharing platform built with Next.js 14.
+Where markdown meets its reflection. A modern, real-time markdown editor and sharing platform built with Next.js 15.
 
-[Live Demo](https://echo-markdown.vercel.app)
+[Live Demo](https://echo-lilac.vercel.app)
 
 ![ECHO Preview](preview.png)
 
@@ -16,12 +16,11 @@ Where markdown meets its reflection. A modern, real-time markdown editor and sha
 
 ## Tech Stack
 
-- [Next.js 14](https://nextjs.org/) - React Framework
+- [Next.js 15](https://nextjs.org/) - React Framework
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [shadcn/ui](https://ui.shadcn.com/) - UI Components
 - [Redis](https://redis.io/) - Data Storage
 - [Lucide React](https://lucide.dev/) - Icons
-- [GeistUI](https://geist-ui.dev/) - Typography
 
 ## Getting Started
 
@@ -68,7 +67,7 @@ yarn dev
 
 The easiest way to deploy ECHO is using [Vercel](https://vercel.com):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fecho)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Figmizo%2Fecho)
 
 Don't forget to add your `REDIS_URL` to your Vercel environment variables.
 
@@ -108,7 +107,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with [Next.js](https://nextjs.org/)
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Typography by [Geist](https://vercel.com/font)
+- Typography by [Vercel](https://vercel.com/font)
 - Icons from [Lucide](https://lucide.dev/)
 
 ---
