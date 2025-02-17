@@ -69,12 +69,13 @@ export default function Home() {
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
               className="w-full h-full p-4 bg-transparent font-mono text-sm resize-none focus:outline-hidden rounded-lg
-                       text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
+                       text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500
+                       scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent"
               placeholder="Write your markdown here..."
               style={{ fontFamily: "var(--font-geist-mono)" }}
             />
           </div>
-          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs shadow-xs p-4 overflow-auto">
+          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs shadow-xs p-4 overflow-auto scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent">
             <div className="prose dark:prose-invert prose-sm max-w-none">
               <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
