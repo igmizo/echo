@@ -26,14 +26,14 @@ export default async function ViewPage({
           <Link
             href="/"
             className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md
-                     hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                     hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                      transition-all shadow-sm hover:shadow-md"
           >
             Create New
           </Link>
         </header>
 
-        <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm shadow-sm p-6">
+        <article className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs shadow-xs p-6">
           <div className="prose dark:prose-invert max-w-none">
             <ReactMarkdown>{content}</ReactMarkdown>
           </div>

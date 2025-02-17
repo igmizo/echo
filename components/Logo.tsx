@@ -9,7 +9,7 @@ export function Logo() {
           className="h-8 w-8 text-blue-500 transform -rotate-6"
           strokeWidth={2.5}
         />
-        <div className="absolute -top-1 -right-1 h-3 w-3 bg-blue-500 rounded-full blur-sm opacity-50" />
+        <div className="absolute -top-1 -right-1 h-3 w-3 bg-blue-500 rounded-full blur-xs opacity-50" />
       </div>
       <div>
         <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">

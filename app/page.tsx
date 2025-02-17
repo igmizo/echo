@@ -55,7 +55,7 @@ export default function Home() {
             onClick={handleShare}
             disabled={isSharing || !markdown.trim()}
             className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md
-                     hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                     hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                      disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all
                      shadow-sm hover:shadow-md"
           >
@@ -64,17 +64,17 @@ export default function Home() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[calc(100vh-16rem)]">
-          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm shadow-sm">
+          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs shadow-xs">
             <textarea
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
-              className="w-full h-full p-4 bg-transparent font-mono text-sm resize-none focus:outline-none rounded-lg
+              className="w-full h-full p-4 bg-transparent font-mono text-sm resize-none focus:outline-hidden rounded-lg
                        text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
               placeholder="Write your markdown here..."
               style={{ fontFamily: "var(--font-geist-mono)" }}
             />
           </div>
-          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm shadow-sm p-4 overflow-auto">
+          <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs shadow-xs p-4 overflow-auto">
             <div className="prose dark:prose-invert prose-sm max-w-none">
               <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
 
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="sm:max-w-md border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+          <DialogContent className="sm:max-w-md border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xs">
             <DialogHeader>
               <DialogTitle className="text-xl font-medium text-gray-900 dark:text-gray-100">
                 Ready to Share!
@@ -101,7 +101,7 @@ export default function Home() {
                          bg-white/50 dark:bg-gray-900/50
                          hover:bg-gray-50 dark:hover:bg-gray-800/80 
                          transition-all duration-200
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                         focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 {copyStatus === "copied" ? (
                   <Check className="h-4 w-4 text-green-500" />

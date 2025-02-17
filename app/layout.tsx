@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased
-                   bg-gradient-to-br from-gray-50 via-gray-50 to-white 
+                   bg-linear-to-br from-gray-50 via-gray-50 to-white 
                    dark:from-gray-950 dark:via-gray-900 dark:to-gray-950
                    min-h-screen relative`}
       >
